@@ -416,7 +416,11 @@
                    ("integration" "integration/*")
                    (:exclude ".dir-locals.el" "*-tests.el")))
   :demand t
+  :init
+  (setq eat-terminal-type "xterm-256color")
   :config
+  (setq vterm-term-environment-variables
+        '(("TERM" . "xterm-256color")))
   ;; I want to switch windows when command is running too...
   (keymap-set eat-eshell-semi-char-mode-map "M-o" #'other-window)
 
